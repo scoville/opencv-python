@@ -709,38 +709,3 @@ before_cache: |
 
     fi
     set +x; set +e
-
-after_success: |
-    # Upload wheels to pypi if requested
-    if [ -n "$TRAVIS_TAG" ]; then
-        set -x
-
-        if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-          pip install --user twine
-          pip install --user --upgrade six
-        fi
-
-        if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-          pip install twine
-          pip install --upgrade pyOpenSSL
-        fi
-
-        if [[ $ENABLE_CONTRIB == 0 ]]; then
-            if [[ $ENABLE_HEADLESS == 0 ]]; then
-              echo "This is default build. Deployment will be done to to PyPI entry opencv-python."
-            else
-              echo "This is headless contrib build. Deployment will be done to to PyPI entry opencv-python-headless."
-            fi
-        else
-            if [[ $ENABLE_HEADLESS == 0 ]]; then
-              echo "This is contrib build. Deployment will be done to to PyPI entry opencv-contrib-python."
-            else
-              echo "This is headless contrib build. Deployment will be done to to PyPI entry opencv-contrib-python-headless."
-            fi
-        fi
-
-        twine upload -u ${USER} -p ${PASS} --skip-existing ${TRAVIS_BUILD_DIR}/wheelhouse/opencv*
-        set +x
-    else
-        echo "Tag not set, deployment skipped."
-    fi
