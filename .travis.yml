@@ -66,22 +66,6 @@ matrix:
       os: osx
       osx_image: xcode8.3
       env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
         - MB_PYTHON_VERSION=3.6
         - ENABLE_CONTRIB=0
         - ENABLE_HEADLESS=0
@@ -107,22 +91,6 @@ matrix:
         use: brew_cache
 
     # headless builds for MacOS
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
     - os: osx
       osx_image: xcode8.3
       env:
@@ -154,22 +122,6 @@ matrix:
     - os: osx
       osx_image: xcode8.3
       env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
         - MB_PYTHON_VERSION=3.6
         - ENABLE_CONTRIB=1
         - ENABLE_HEADLESS=0
@@ -198,22 +150,6 @@ matrix:
     - os: osx
       osx_image: xcode8.3
       env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
         - MB_PYTHON_VERSION=3.6
         - ENABLE_CONTRIB=1
         - ENABLE_HEADLESS=1
@@ -239,53 +175,6 @@ matrix:
         use: brew_cache
 
     # default builds for Linux
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.6
@@ -341,53 +230,6 @@ matrix:
     # headless builds for Linux
     - os: linux
       env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
         - MB_PYTHON_VERSION=3.6
         - ENABLE_CONTRIB=0
         - ENABLE_HEADLESS=1
@@ -439,53 +281,6 @@ matrix:
         directories: $HOME/.ccache
 
     # contrib builds for Linux
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - PLAT=i686
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.6
@@ -540,53 +335,6 @@ matrix:
 
 
     # headless contrib builds for Linux
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=2.7
-        - PLAT=i686
-        - UNICODE_WIDTH=16
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.5
-        - PLAT=i686
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.6
