@@ -64,62 +64,62 @@ matrix:
       #further jobs in the list will use the same stage until the next assignment
     - stage: final
       os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.14.5
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.17.3
-      workspaces:
-        use: brew_cache
-
-    # headless builds for MacOS
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.14.5
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.17.3
-      workspaces:
-        use: brew_cache
-
-    # Contrib builds for MacOS
-    - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   workspaces:
+    #     use: brew_cache
+    #
+    # # headless builds for MacOS
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   workspaces:
+    #     use: brew_cache
+    #
+    # # Contrib builds for MacOS
+    # - os: osx
       osx_image: xcode8.3
       env:
         - MB_PYTHON_VERSION=3.6
@@ -175,110 +175,110 @@ matrix:
         use: brew_cache
 
     # default builds for Linux
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.11.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.11.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.14.5
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.14.5
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.17.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.17.3
-      cache:
-        directories: $HOME/.ccache
-
-    # headless builds for Linux
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.11.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.11.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.14.5
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.14.5
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.17.3
-      cache:
-        directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - PLAT=i686
-        - ENABLE_CONTRIB=0
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.17.3
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    #
+    # # headless builds for Linux
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   cache:
+    #     directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=i686
+    #     - ENABLE_CONTRIB=0
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   cache:
+    #     directories: $HOME/.ccache
 
     # contrib builds for Linux
     - os: linux
@@ -289,15 +289,15 @@ matrix:
         - ENABLE_HEADLESS=0
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.11.3
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #   cache:
+    #     directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.7
@@ -306,15 +306,15 @@ matrix:
         - ENABLE_HEADLESS=0
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.14.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #   cache:
+    #     directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.8
@@ -323,15 +323,15 @@ matrix:
         - ENABLE_HEADLESS=0
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.17.3
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #   cache:
+    #     directories: $HOME/.ccache
 
 
     # headless contrib builds for Linux
@@ -343,15 +343,15 @@ matrix:
         - ENABLE_HEADLESS=1
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.11.3
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.11.3
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #   cache:
+    #     directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.7
@@ -360,15 +360,15 @@ matrix:
         - ENABLE_HEADLESS=1
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.14.5
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #   cache:
+    #     directories: $HOME/.ccache
     - os: linux
       env:
         - MB_PYTHON_VERSION=3.8
@@ -377,15 +377,15 @@ matrix:
         - ENABLE_HEADLESS=1
       cache:
         directories: $HOME/.ccache
-    - os: linux
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - PLAT=i686
-        - TEST_DEPENDS=numpy==1.17.3
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      cache:
-        directories: $HOME/.ccache
+    # - os: linux
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - PLAT=i686
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #   cache:
+    #     directories: $HOME/.ccache
 
 # The first line is printed in the folding header in Travis output
 before_install: |
