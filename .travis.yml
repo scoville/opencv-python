@@ -62,8 +62,8 @@ matrix:
 
     # default builds for MacOS
       #further jobs in the list will use the same stage until the next assignment
-    - stage: final
-      os: osx
+    # - stage: final
+    #   os: osx
     #   osx_image: xcode8.3
     #   env:
     #     - MB_PYTHON_VERSION=3.6
@@ -120,59 +120,59 @@ matrix:
     #
     # # Contrib builds for MacOS
     # - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.14.5
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=0
-        - TEST_DEPENDS=numpy==1.17.3
-      workspaces:
-        use: brew_cache
-
-    # headless contrib builds for MacOS
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.6
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.7
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.14.5
-      workspaces:
-        use: brew_cache
-    - os: osx
-      osx_image: xcode8.3
-      env:
-        - MB_PYTHON_VERSION=3.8
-        - ENABLE_CONTRIB=1
-        - ENABLE_HEADLESS=1
-        - TEST_DEPENDS=numpy==1.17.3
-      workspaces:
-        use: brew_cache
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=0
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   workspaces:
+    #     use: brew_cache
+    #
+    # # headless contrib builds for MacOS
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.6
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.7
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.14.5
+    #   workspaces:
+    #     use: brew_cache
+    # - os: osx
+    #   osx_image: xcode8.3
+    #   env:
+    #     - MB_PYTHON_VERSION=3.8
+    #     - ENABLE_CONTRIB=1
+    #     - ENABLE_HEADLESS=1
+    #     - TEST_DEPENDS=numpy==1.17.3
+    #   workspaces:
+    #     use: brew_cache
 
     # default builds for Linux
     # - os: linux
@@ -281,7 +281,9 @@ matrix:
     #     directories: $HOME/.ccache
 
     # contrib builds for Linux
-    - os: linux
+    - stage: final
+      os: linux
+    # - os: linux
       env:
         - MB_PYTHON_VERSION=3.6
         - TEST_DEPENDS=numpy==1.11.3
